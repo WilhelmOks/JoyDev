@@ -39,6 +39,7 @@ private func configureDB(_ app: Application) async throws {
     }
     
     app.migrations.add(CreateTodo())
+    app.migrations.add(CreateAll())
     
     if kind != .postgres {
         try await app.autoMigrate()
